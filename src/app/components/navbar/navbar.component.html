@@ -1,0 +1,69 @@
+<!-- Sidebar  -->
+<nav id="sidebar">
+  <div class="sidebar-header">
+    <h3>Menu</h3>
+  </div>
+
+  <ul class="list-unstyled components">
+    <li class="active">
+      <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Consultar</a>
+      <ul class="collapse list-unstyled" id="homeSubmenu">
+        <li routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['ConsultarPoa']">POA</a>
+        </li>
+        <li>
+          <a class="nav-link" [routerLink]="['ConsultarCaptura']">Captura</a>
+        </li>
+        <li>
+          <a class="nav-link" [routerLink]="['ConsultarPartidas']">Partidas</a>
+        </li>
+        <li>
+          <a class="nav-link" [routerLink]="['ConsultarMetas']">Metas</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Modificar</a>
+      <ul class="collapse list-unstyled" id="pageSubmenu">
+        <li>
+          <a class="nav-link" [routerLink]="['ModificarPoa']">POA</a>
+        </li>
+        <li>
+          <a class="nav-link" [routerLink]="['ModificarCaptura']">Captura</a>
+        </li>
+        <li>
+          <a class="nav-link" [routerLink]="['ModificarPartidas']">Partidas</a>
+        </li>
+        <li>
+          <a class="nav-link" [routerLink]="['ModificarMetas']">Metas</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="#agregarSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Agregar</a>
+      <ul class="collapse list-unstyled" id="agregarSubmenu">
+        <li>
+          <a class="nav-link" [routerLink]="['AgregarPoa']">POA</a>
+        </li>
+        <li>
+          <a class="nav-link" [routerLink]="['AgregarCaptura']">Captura</a>
+        </li>
+        <li>
+          <a class="nav-link" [routerLink]="['AgregarPartidas']">Partidas</a>
+        </li>
+        <li>
+          <a class="nav-link" [routerLink]="['AgregarMetas']">Metas</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+<nav class="navbar navbar-expand-lg navBar">
+  <button type="button" class="btn btn-primary loginButton">Iniciar sesión</button>
+</nav>
+
+<div class="elContenido">
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,38 @@
+<h3 class="titulos">Consultar Captura</h3>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Folio</th>
+      <th scope="col">Departamento</th>
+      <th scope="col">Proyecto</th>
+      <th scope="col">Accion</th>
+      <th scope="col">Partida</th>
+      <th scope="col">Monto</th>
+      <th scope="col">Proceso</th>
+      <th scope="col">Meta</th>
+      <th scope="col">Gestiono</th>
+      <th scope="col">Fecha</th>
+      <th scope="col">Editar</th>
+      <th scope="col">Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let k of capturaData | keys;let i = index">
+      <th scope="row">{{capturaData[k].folio}}</th>
+      <td>{{capturaData[k].departamento}}</td>
+      <td>{{capturaData[k].proyecto}}</td>
+      <td>{{capturaData[k].accion}}</td>
+      <td>{{capturaData[k].partida}}</td>
+      <td>{{capturaData[k].monto}}</td>
+      <td>{{capturaData[k].proceso}}</td>
+      <td>{{capturaData[k].meta}}</td>
+      <td>{{capturaData[k].gestiono}}</td>
+      <td>{{capturaData[k].fecha}}</td>
+      
+      <td><button type="button" class="btn btn-primary"><i class="far fa-edit"></i></button></td>
+
+      <td><button (click)="eliminarDatos(capturaData[k].folio,i)" type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button></td>
+    </tr>
+  </tbody>
+</table>

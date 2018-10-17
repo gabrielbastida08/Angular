@@ -1,0 +1,24 @@
+<h3 class="titulos">Consultar POA</h3>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Partida</th>
+      <th scope="col">Clave Presupuestal</th>
+      <th scope="col">Total</th>
+      <th scope="col">Editar</th>
+      <th scope="col">Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let k of poaData | keys;let i = index">
+      <th scope="row">{{poaData[k].partida}}</th>
+      <td>{{poaData[k].clave_presupuestal}}</td>
+      <td>{{poaData[k].total}}</td>
+
+      <td><button type="button" class="btn btn-primary"><i class="far fa-edit"></i></button></td>
+
+      <td><button (click)="eliminarDatos(poaData[k].partida,i)" type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button></td>
+    </tr>
+  </tbody>
+</table>

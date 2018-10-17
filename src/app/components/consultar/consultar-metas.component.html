@@ -1,0 +1,24 @@
+<h3 class="titulos">Consultar Metas</h3>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col"># Meta</th>
+      <th scope="col">Significado</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Editar</th>
+      <th scope="col">Eliminar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let k of metasData | keys;let i = index">
+      <th scope="row">{{metasData[k].numero_meta}}</th>
+      <td>{{metasData[k].meta_significado}}</td>
+      <td>{{metasData[k].descripcion}}</td>
+
+      <td><button type="button" class="btn btn-primary"><i class="far fa-edit"></i></button></td>
+      
+      <td><button (click)="eliminarDatos(metasData[k].numero_meta,i)" type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button></td>
+    </tr>
+  </tbody>
+</table>
