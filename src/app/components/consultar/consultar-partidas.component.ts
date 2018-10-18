@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { PartidasService } from '../../services/partidas.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class ConsultarPartidasComponent {
 
   partidasData:any[] = [];
 
-  constructor(private _PartidasService:PartidasService) {
+  constructor(private _PartidasService:PartidasService, private _router:Router) {
     _PartidasService.getPartidas()
     .subscribe( (data:any) =>{
       this.partidasData = data;
@@ -28,5 +29,11 @@ export class ConsultarPartidasComponent {
         console.log("UPS: " + Response.data.msg);
       }
     });
+  }
+
+  modificarDatos(index:number)
+  {
+    console.log("el index: " + index);
+    this._router.navigate(['/ModificarPartidas',index]);
   }
 }

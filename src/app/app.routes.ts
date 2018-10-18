@@ -29,10 +29,10 @@ const APP_ROUTES:Routes = [
 	{ path:'ConsultarPartidas', component: ConsultarPartidasComponent },
 	{ path:'ConsultarMetas', component: ConsultarMetasComponent },
 
-	{ path:'ModificarPoa', component: ModificarPoaComponent },
-	{ path:'ModificarCaptura', component: ModificarCapturaComponent },
-	{ path:'ModificarPartidas', component: ModificarPartidasComponent },
-	{ path:'ModificarMetas', component: ModificarMetasComponent },
+	{ path:'ModificarPoa/:id', component: ModificarPoaComponent },
+	{ path:'ModificarCaptura/:id', component: ModificarCapturaComponent },
+	{ path:'ModificarPartidas/:id', component: ModificarPartidasComponent },
+	{ path:'ModificarMetas/:id', component: ModificarMetasComponent },
 	
 	{ path:'AgregarPoa', component: AgregarPoaComponent },
 	{ path:'AgregarCaptura', component: AgregarCapturaComponent },

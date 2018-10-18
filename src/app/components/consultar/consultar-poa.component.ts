@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { PoaService } from '../../services/poa.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class ConsultarPoaComponent {
 
   poaData:any[] = [];
 
-  constructor(private _poaService:PoaService) {
+  constructor(private _poaService:PoaService, private _router:Router) {
 
     _poaService.getPoa()
     .subscribe( (data:any) =>{
@@ -33,5 +34,11 @@ export class ConsultarPoaComponent {
       }
       
     });
+  }
+
+  modificarDatos(index:number)
+  {
+    console.log("el index: " + index);
+    this._router.navigate(['/ModificarPoa',index]);
   }
 }

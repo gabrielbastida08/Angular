@@ -16,7 +16,7 @@
       <td>{{poaData[k].clave_presupuestal}}</td>
       <td>{{poaData[k].total}}</td>
 
-      <td><button type="button" class="btn btn-primary"><i class="far fa-edit"></i></button></td>
+      <td><button type="button" class="btn btn-primary" (click)="modificarDatos(poaData[k].partida)"><i class="far fa-edit"></i></button></td>
 
       <td><button (click)="eliminarDatos(poaData[k].partida,i)" type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button></td>
     </tr>

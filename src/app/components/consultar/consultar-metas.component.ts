@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { MetasService } from '../../services/metas.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class ConsultarMetasComponent{
 
 	metasData:any[] = [];
 
-	constructor(private _metasService:MetasService) {
+	constructor(private _metasService:MetasService, private _router:Router) {
     	_metasService.getMetas()
     		.subscribe( (data:any) =>{
       		this.metasData = data;
@@ -30,5 +31,11 @@ export class ConsultarMetasComponent{
         console.log("UPS :" + Response.data.msg);
       }
     });
+  }
+
+  modificarDatos(index:number)
+  {
+    console.log("el index: " + index);
+    this._router.navigate(['/ModificarMetas',index]);
   }
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { CapturaService } from '../../services/captura.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class ConsultarCapturaComponent {
 
 	capturaData:any[] = [];
 
-  constructor(private _consultarService:CapturaService){
+  constructor(private _consultarService:CapturaService, private _router:Router){
 
   	_consultarService.getCaptura()
   		.subscribe( (data:any) => {
@@ -32,4 +33,11 @@ export class ConsultarCapturaComponent {
       }
     });
   }
+
+    modificarDatos(index:number)
+  {
+    console.log("el index: " + index);
+    this._router.navigate(['/ModificarCaptura',index]);
+  }
+  
 }
