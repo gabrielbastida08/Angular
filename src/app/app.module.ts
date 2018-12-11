@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { APP_ROUTING } from './app.routes';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
 
 import { PoaService } from './services/poa.service'
 import { CapturaService } from './services/captura.service'
@@ -53,7 +55,9 @@ import { KeysPipe } from './pipes/keys.pipe';
   imports: [
     BrowserModule,
     APP_ROUTING,
-    HttpClientModule
+    HttpModule,
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [
   PoaService,

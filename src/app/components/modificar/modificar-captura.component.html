@@ -1,6 +1,6 @@
 <h4>Modificar Captura</h4>
 <hr>
-<form>
+<form (ngSubmit)="saveData()" #forma="ngForm">
 
   <div>
 
@@ -10,7 +10,8 @@
 
         <input class="form-control"
                type="text"
-               placeholder="Folio">
+               name="folio"
+               [(ngModel)]="newObjet.folio">
       </div>
     </div>
 
@@ -20,7 +21,8 @@
 
         <input class="form-control"
                type="text"
-               placeholder="Departamento">
+               name="departamento"
+               [(ngModel)]="newObjet.departamento">
       </div>
     </div>
 
@@ -30,7 +32,8 @@
 
         <input class="form-control"
              type="text"
-             placeholder="Proyecto">
+             name="proyecto"
+             [(ngModel)]="newObjet.proyecto">
       </div>
   </div>
 
@@ -40,7 +43,8 @@
 
         <input class="form-control"
              type="text"
-             placeholder="Accion">
+             name="accion"
+             [(ngModel)]="newObjet.accion">
       </div>
   </div>
 
@@ -50,7 +54,8 @@
 
         <input class="form-control"
              type="text"
-             placeholder="Partida">
+             name="partida"
+             [(ngModel)]="newObjet.partida">
       </div>
   </div>
 
@@ -60,7 +65,8 @@
 
         <input class="form-control"
              type="text"
-             placeholder="Monto">
+             name="monto"
+             [(ngModel)]="newObjet.monto">
       </div>
   </div>
 
@@ -70,7 +76,8 @@
 
         <input class="form-control"
              type="text"
-             placeholder="Proceso">
+             name="proceso"
+             [(ngModel)]="newObjet.proceso">
       </div>
   </div>
 
@@ -80,7 +87,8 @@
 
         <input class="form-control"
              type="text"
-             placeholder="Meta">
+             name="meta"
+             [(ngModel)]="newObjet.meta">
       </div>
   </div>
 
@@ -90,7 +98,8 @@
 
         <input class="form-control"
              type="text"
-             placeholder="Gestiono">
+             name="gestiono"
+             [(ngModel)]="newObjet.gestiono">
       </div>
   </div>
 
@@ -100,20 +109,40 @@
 
         <input class="form-control"
              type="text"
-             placeholder="Fecha">
+             name="fecha"
+             [(ngModel)]="newObjet.fecha">
       </div>
   </div>
 
   </div>
 
-
   <div class="form-group row">
     <label class="col-2 col-form-label">&nbsp;</label>
     <div class="input-group col-md-8">
-      <button type="submit" class="btn btn-outline-primary">
+      <button type="submit" class="btn btn-outline-primary" data-toggle="modal" data-target='#insertData'>
         Guardar
       </button>
     </div>
   </div>
+
+<!-- Modal -->
+<div class="modal fade" id="insertData" tabindex="-1" role="dialog" aria-labelledby="succes" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 *ngIf="insertedData" class="modal-title" id="succes">Succes</h5>
+        <h5 *ngIf="!insertedData" class="modal-title" id="fail">Failure</h5>
+        <button (click)="navigate()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div *ngIf="insertedData" class="modal-body">Dato actualizado con exito</div>
+      <div *ngIf="!insertedData" class="modal-body">Upss !!!</div>
+      <div class="modal-footer">
+        <button (click)="navigate()" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 </form>

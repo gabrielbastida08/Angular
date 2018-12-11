@@ -1,3 +1,63 @@
-<p>
-  agregar-partidas works!
-</p>
+<h4>Agregar Partidas</h4>
+<hr>
+<form (ngSubmit)="saveData()" #forma="ngForm">
+
+  <div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label"># Partida</label>
+      <div class="col-8">
+
+        <input class="form-control"
+               type="text"
+               name="numero_partida"
+               [(ngModel)]="data.numero_partida">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Monto Presupuestado</label>
+      <div class="col-8">
+
+        <input class="form-control"
+               type="text"
+               name="monto_presupuestado"
+               [(ngModel)]="data.monto_presupuestado">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Monto Ejercido</label>
+      <div class="col-md-8">
+
+        <input class="form-control"
+             type="text"
+             name="monto_ejercido"
+             [(ngModel)]="data.monto_ejercido">
+      </div>
+  </div>
+
+  <div class="form-group row">
+      <label class="col-2 col-form-label">Categoria/Significado</label>
+      <div class="col-md-8">
+
+        <input class="form-control"
+             type="text"
+             name="categoria_significado"
+             [(ngModel)]="data.categoria_significado">
+      </div>
+  </div>
+
+  </div>
+
+
+  <div class="form-group row">
+    <label class="col-2 col-form-label">&nbsp;</label>
+    <div class="input-group col-md-8">
+      <button type="submit" class="btn btn-outline-primary">
+        Guardar
+      </button>
+    </div>
+  </div>
+
+</form>

@@ -36,7 +36,6 @@ export class ConsultarCapturaComponent {
 
     modificarDatos(index:number)
   {
-    console.log("el index: " + index);
     this._router.navigate(['/ModificarCaptura',index]);
   }
   

@@ -1,6 +1,6 @@
 <h4>Modificar Partidas</h4>
 <hr>
-<form>
+<form (ngSubmit)="saveData(forma)" #forma="ngForm">
 
   <div>
 
@@ -10,7 +10,8 @@
 
         <input class="form-control"
                type="text"
-               placeholder="# Partida">
+               name="numero_partida"
+               [(ngModel)]="newObjet.numero_partida">
       </div>
     </div>
 
@@ -20,7 +21,8 @@
 
         <input class="form-control"
                type="text"
-               placeholder="Monto Presupuestado">
+               name="monto_presupuestado"
+               [(ngModel)]="newObjet.monto_presupuestado">
       </div>
     </div>
 
@@ -30,7 +32,8 @@
 
         <input class="form-control"
              type="text"
-             placeholder="Monto Ejercido">
+             name="monto_ejercido"
+             [(ngModel)]="newObjet.monto_ejercido">
       </div>
   </div>
 
@@ -40,20 +43,40 @@
 
         <input class="form-control"
              type="text"
-             placeholder="Categoria/Significado">
+             name="categoria_significado"
+             [(ngModel)]="newObjet.categoria_significado">
       </div>
   </div>
 
   </div>
 
-
-  <div class="form-group row">
+<div class="form-group row">
     <label class="col-2 col-form-label">&nbsp;</label>
     <div class="input-group col-md-8">
-      <button type="submit" class="btn btn-outline-primary">
+      <button type="submit" class="btn btn-outline-primary" data-toggle="modal" data-target='#insertData'>
         Guardar
       </button>
     </div>
   </div>
+
+<!-- Modal -->
+<div class="modal fade" id="insertData" tabindex="-1" role="dialog" aria-labelledby="succes" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 *ngIf="insertedData" class="modal-title" id="succes">Succes</h5>
+        <h5 *ngIf="!insertedData" class="modal-title" id="fail">Failure</h5>
+        <button (click)="navigate()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div *ngIf="insertedData" class="modal-body">Dato actualizado con exito</div>
+      <div *ngIf="!insertedData" class="modal-body">Upss !!!</div>
+      <div class="modal-footer">
+        <button (click)="navigate()" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 </form>

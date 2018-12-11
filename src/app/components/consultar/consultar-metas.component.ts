@@ -35,7 +35,6 @@ export class ConsultarMetasComponent{
 
   modificarDatos(index:number)
   {
-    console.log("el index: " + index);
     this._router.navigate(['/ModificarMetas',index]);
   }
 }

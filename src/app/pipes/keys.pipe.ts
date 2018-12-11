@@ -14,7 +14,7 @@ export class KeysPipe implements PipeTransform {
     {
       keys.push(key);
     }
-
+    
     return keys;
   }
 

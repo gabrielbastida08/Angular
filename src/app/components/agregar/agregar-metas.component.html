@@ -1,3 +1,52 @@
-<p>
-  agregar-metas works!
-</p>
+<h4>Agregar Metas</h4>
+<hr>
+<form (ngSubmit)="saveData()" #forma="ngForm">
+
+  <div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label"># Meta</label>
+      <div class="col-8">
+
+        <input class="form-control"
+               type="text"
+               name="numero_meta"
+               [(ngModel)]="data.numero_meta">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Significado</label>
+      <div class="col-8">
+
+        <input class="form-control"
+               type="text"
+               name="meta_significado"
+               [(ngModel)]="data.meta_significado">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Descripcion</label>
+      <div class="col-md-8">
+
+        <input class="form-control"
+             type="text"
+               name="descripcion"
+               [(ngModel)]="data.descripcion">
+      </div>
+  </div>
+
+  </div>
+
+
+  <div class="form-group row">
+    <label class="col-2 col-form-label">&nbsp;</label>
+    <div class="input-group col-md-8">
+      <button type="submit" class="btn btn-outline-primary">
+        Guardar
+      </button>
+    </div>
+  </div>
+
+</form>

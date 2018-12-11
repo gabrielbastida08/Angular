@@ -38,7 +38,6 @@ export class ConsultarPoaComponent {
 
   modificarDatos(index:number)
   {
-    console.log("el index: " + index);
     this._router.navigate(['/ModificarPoa',index]);
   }
 }

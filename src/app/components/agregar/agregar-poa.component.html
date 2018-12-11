@@ -1,3 +1,52 @@
-<p>
-  agregar-poa works!
-</p>
+<h4>Agregar Poa</h4>
+<hr>
+<form (ngSubmit)="saveData()" #forma="ngForm">
+
+  <div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Partida</label>
+      <div class="col-8">
+
+        <input class="form-control"
+               type="text"
+               name="Partida"
+               [(ngModel)]="data.partida">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Clave Presupuestal</label>
+      <div class="col-8">
+
+        <input class="form-control"
+               type="text"
+               name="Clave Presupuestal"
+               [(ngModel)]="data.clave_presupuestal">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Total</label>
+      <div class="col-md-8">
+
+        <input class="form-control"
+             type="text"
+             name="Total"
+             [(ngModel)]="data.total">
+      </div>
+  </div>
+
+  </div>
+
+
+  <div class="form-group row">
+    <label class="col-2 col-form-label">&nbsp;</label>
+    <div class="input-group col-md-8">
+      <button type="submit" class="btn btn-outline-primary">
+        Guardar
+      </button>
+    </div>
+  </div>
+
+</form>
